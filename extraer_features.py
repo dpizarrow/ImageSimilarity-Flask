@@ -31,12 +31,12 @@ def get_features(image_bytes):
     out = feature_extractor(tensor)
     return out
 
-for files in os.listdir(dir):
-    print(files)
-        # image_bytes = transform_image(imagen)
-        # features = list(get_features(image_bytes).values())[0]
-        # features = features.numpy()
-        # features.save(os.path.join('features', f.split('.')[0] + '.npy'))
+for file in os.listdir(dir):
+    with open(file, 'rb') as imagen:
+        image_bytes = transform_image(imagen)
+        features = list(get_features(image_bytes).values())[0]
+        features = features.numpy()
+        features.save(os.path.join('features', file.split('.')[0] + '.npy'))
 
 
 
