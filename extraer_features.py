@@ -5,6 +5,7 @@ from PIL import Image
 from torchvision.models.feature_extraction import create_feature_extractor
 from torchvision import models
 import os
+import numpy as np
 
 dir = '/media/disco-compartido/mc4/catalogo'
 
@@ -36,7 +37,7 @@ for file in os.listdir(dir):
         imagen = imagen.read()
         features = list(get_features(imagen).values())[0]
         features = features.detach().numpy()
-        features.save(os.path.join('features', file.split('.')[0] + '.npy'))
+        np.save(os.path.join('features', file.split('.')[0] + '.npy'))
 
 
 
