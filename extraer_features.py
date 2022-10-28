@@ -32,7 +32,7 @@ def get_features(image_bytes):
     return out
 
 for file in os.listdir(dir):
-    with open(file, 'rb') as imagen:
+    with open(os.path.join(dir, file), 'rb') as imagen:
         image_bytes = transform_image(imagen)
         features = list(get_features(image_bytes).values())[0]
         features = features.numpy()
