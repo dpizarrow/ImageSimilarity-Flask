@@ -37,7 +37,6 @@ for file in os.listdir(dir):
         imagen = imagen.read()
         features = list(get_features(imagen).values())[0]
         features = features.detach().numpy()
-        np.save(os.path.join('features', file.split('.')[0] + '.npy'), features)
-
-
-
+        os.makedirs('features', exist_ok=True)
+        with open(os.path.join('features', file.split('.')[0] + '.npy'), 'wb') as f:
+            np.save(f, features)
