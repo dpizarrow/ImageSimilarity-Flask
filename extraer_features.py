@@ -6,7 +6,7 @@ from torchvision.models.feature_extraction import create_feature_extractor
 from torchvision import models
 import os
 
-files = Path('/media/disco-compartido/mc4/catalogo').glob('*')
+dir = '/media/disco-compartido/mc4/catalogo'
 
 def transform_image(image_bytes):
     my_transforms = transforms.Compose([transforms.Resize(255),
@@ -31,12 +31,12 @@ def get_features(image_bytes):
     out = feature_extractor(tensor)
     return out
 
-for f in files:
-    with open(f) as imagen:
-        image_bytes = transform_image(imagen)
-        features = list(get_features(image_bytes).values())[0]
-        features = features.numpy()
-        features.save(os.path.join('features', f.split('.')[0] + '.npy'))
+for files in os.listdir(dir):
+    print(files)
+        # image_bytes = transform_image(imagen)
+        # features = list(get_features(image_bytes).values())[0]
+        # features = features.numpy()
+        # features.save(os.path.join('features', f.split('.')[0] + '.npy'))
 
 
 
