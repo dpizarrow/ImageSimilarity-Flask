@@ -33,7 +33,7 @@ def get_features(image_bytes):
 
 for f in files:
     with open(f, 'rb') as imagen:
-        image_bytes = transform_image(imagen)
+        image_bytes = transform_image(imagen.read())
         features = list(get_features(image_bytes).values())[0]
         features = features.numpy()
         features.save(os.path.join('features', f.split('.')[0] + '.npy'))
