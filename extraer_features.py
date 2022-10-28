@@ -34,8 +34,7 @@ def get_features(image_bytes):
 for file in os.listdir(dir):
     with open(os.path.join(dir, file), 'rb') as imagen:
         imagen = imagen.read()
-        image_bytes = transform_image(imagen)
-        features = list(get_features(image_bytes = image_bytes).values())[0]
+        features = list(get_features(imagen).values())[0]
         features = features.numpy()
         features.save(os.path.join('features', file.split('.')[0] + '.npy'))
 
