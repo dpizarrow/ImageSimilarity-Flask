@@ -35,7 +35,7 @@ for file in os.listdir(dir):
     with open(os.path.join(dir, file), 'rb') as imagen:
         imagen = imagen.read()
         features = list(get_features(imagen).values())[0]
-        features = features.numpy()
+        features = features.detach().numpy()
         features.save(os.path.join('features', file.split('.')[0] + '.npy'))
 
 
