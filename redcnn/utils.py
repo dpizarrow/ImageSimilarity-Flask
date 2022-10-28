@@ -1,4 +1,4 @@
-from app import model, imagenet_class_index, feature_extractor
+from app import feature_extractor
 import io
 import torchvision.transforms as transforms
 from PIL import Image

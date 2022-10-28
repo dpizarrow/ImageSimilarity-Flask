@@ -1,7 +1,6 @@
 from app import app
-from utils import get_prediction, get_features
-from flask import Flask, jsonify, request
-import base64
+from utils import get_features
+from flask import request
 import io
 import torch
 
