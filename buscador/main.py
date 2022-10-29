@@ -4,7 +4,7 @@ from app import app, API_URL
 import requests
 from flask import request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
-from utils import allowed_file, get_closest_match
+from utils import allowed_file, get_closest_matches
 import secrets
 import torch
 import io
@@ -33,7 +33,8 @@ def index_image():
         if apicall.status_code == 200:
             error = None
             features = torch.load(io.BytesIO(apicall.content))
-            closest_filename = get_closest_match(features)
+            print(features)
+            closest_filename = get_closest_matches(features)
             result = {'closest_filename': closest_filename}
         else:
             error = 'Error al procesar la imagen'
