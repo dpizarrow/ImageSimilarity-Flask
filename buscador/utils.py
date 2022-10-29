@@ -18,6 +18,10 @@ def get_closest_matches(features):
         fname += '.jpg'
         arr = np.load(os.path.join(featurepath, f))
         arr = torch.from_numpy(arr)
+        d = torch.cdist(features, arr, p=2)
+        results[fname] = d
+    return results
+
  
 
 get_closest_matches("hola")
