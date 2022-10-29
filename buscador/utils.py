@@ -22,10 +22,11 @@ def get_closest_matches(features):
         arr = torch.flatten(arr)
         dist = torch.nn.PairwiseDistance(p=2)
         d = dist(arr, features)
-        print(d)
-        results[fname] = d
+        val = d.item()
+        print(val)
+        results[fname] = val
     #print(results)
-    # results = dict(sorted(results.items(), key=lambda x:x[1]))
+    #results = dict(sorted(results.items(), key=lambda x:x[1]))
     top_3 = []
     for k in results:
         top_3.append(k)
