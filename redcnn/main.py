@@ -22,8 +22,7 @@ def predict():
         buff = io.BytesIO()
         torch.save(deep_features, buff)
         buff.seek(0)
-        buff = buff.read()
-        return buff  # return buff.read()
+        return buff # return buff.read()
 
 
 if __name__ == "__main__":
