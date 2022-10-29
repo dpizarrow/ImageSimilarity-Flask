@@ -26,5 +26,3 @@ def get_closest_matches(features):
         top_3.append(k)
     return top_3[0]
  
-
-get_closest_matches("hola")
