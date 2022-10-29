@@ -23,7 +23,7 @@ def get_closest_matches(features):
         dist = torch.nn.PairwiseDistance(p=2)
         d = dist(arr, features)
         val = d.item()
-        print(val)
+        #print(val)
         results[fname] = val
     #print(results)
     results = dict(sorted(results.items(), key=lambda x:x[1]))

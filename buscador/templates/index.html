@@ -22,7 +22,7 @@
     {% if filename %}
     {% if result['closest_filename'] is not none %}
     Match predicho:
-    <img alt="Uploaded image" class="uploaded-image" src="{{ url_for('display_image' , filename=result['closest_filename']) }}">
+    <img alt="Uploaded image" class="uploaded-image" src="{{ url_for('display_results' , filename=result['closest_filename']) }}">
     {% else %}
     <div class="response response-error">
         Error de predicción. No se encontró ningún match.
