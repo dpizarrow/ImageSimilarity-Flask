@@ -49,7 +49,7 @@ def index_image():
 def display_image(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
-@app.route('/display/<filename>')
+@app.route('/results/<filename>')
 def display_results(filename):
     return redirect(url_for('/media/disco-compartido/mc4/catalogo', filename=filename), code=301)
 
