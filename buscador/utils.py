@@ -27,6 +27,7 @@ def get_closest_matches(features):
         results[fname] = val
     #print(results)
     results = dict(sorted(results.items(), key=lambda x:x[1]))
+    print(results)
     top_3 = []
     for k in results:
         top_3.append(k)
