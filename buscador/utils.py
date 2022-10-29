@@ -1,6 +1,7 @@
 import os
 from collections import defaultdict
 import numpy as np
+import torch
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -16,7 +17,7 @@ def get_closest_matches(features):
         fname = f.split('.')[0]
         fname += '.jpg'
         arr = np.load(os.path.join(featurepath, f))
-        print(type(arr))
+        arr = torch.from_numpy(arr)
  
 
 get_closest_matches("hola")
