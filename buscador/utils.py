@@ -18,10 +18,13 @@ def get_closest_matches(features):
         fname += '.jpg'
         arr = np.load(os.path.join(featurepath, f))
         arr = torch.from_numpy(arr)
-        d = torch.cdist(features, arr, p=2)
-        d = torch.flatten(d)
+        features = torch.flatten(features)
+        arr = torch.flatten(arr)
+        dist = torch.nn.PairwiseDistance(p=2)
+        d = dist(arr, features)
+        print(d)
         results[fname] = d
-    print(results)
+    #print(results)
     # results = dict(sorted(results.items(), key=lambda x:x[1]))
     top_3 = []
     for k in results:
