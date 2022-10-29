@@ -33,7 +33,6 @@ def index_image():
         if apicall.status_code == 200:
             error = None
             features = torch.load(io.BytesIO(apicall.content))
-            print(features)
             closest_filename = get_closest_matches(features)
             result = {'closest_filename': closest_filename}
         else:
