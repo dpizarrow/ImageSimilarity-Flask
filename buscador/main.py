@@ -34,6 +34,7 @@ def index_image():
             error = None
             features = torch.load(io.BytesIO(apicall.content))
             closest_filename = get_closest_matches(features)
+            print(closest_filename)
             result = {'closest_filename': closest_filename}
         else:
             error = 'Error al procesar la imagen'
