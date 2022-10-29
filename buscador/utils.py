@@ -19,6 +19,7 @@ def get_closest_matches(features):
         arr = np.load(os.path.join(featurepath, f))
         arr = torch.from_numpy(arr)
         d = torch.cdist(features, arr, p=2)
+        print(d.size())
         results[fname] = d
     print(results)
     results = dict(sorted(results.items(), key=lambda x:x[1]))
