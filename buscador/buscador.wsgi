@@ -1,1 +1,1 @@
-from main import app as buscador
+from main import app as application

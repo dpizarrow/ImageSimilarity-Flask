@@ -1,1 +1,1 @@
-from main import app as redcnn
+from main import app as application
