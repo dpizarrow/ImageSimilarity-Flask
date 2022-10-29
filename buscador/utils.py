@@ -2,6 +2,7 @@ import os
 from collections import defaultdict
 import numpy as np
 import torch
+import itertools
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -12,7 +13,6 @@ def allowed_file(filename):
 
 def get_closest_matches(features):
     results = defaultdict()
-    i = 0
     for f in os.listdir(featurepath):
         fname = f.split('.')[0]
         fname += '.jpg'
@@ -20,8 +20,11 @@ def get_closest_matches(features):
         arr = torch.from_numpy(arr)
         d = torch.cdist(features, arr, p=2)
         results[fname] = d
-    return results
-
+    results = dict(sorted(results.items(), key=lambda x:x[1]))
+    top_3 = []
+    for k in results:
+        top_3.append(k)
+    return top_3
  
 
 get_closest_matches("hola")
