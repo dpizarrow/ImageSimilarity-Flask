@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CC6409 - Mini-Control 4 - Buscador App</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+    <link href="{{ url_for('static' , filename='css/index.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1>CC6409 - Mini-Control 4 - Buscador App</h1>
+    <p>Aplicación para el mini-control 4 del 28 de octubre de 2022.</p>
+	<p>Suba una imagen y se mostrarán los productos más parecidos.</p>
+
+	<div id="divForm1">
+		<form action="" enctype="multipart/form-data" method="post">
+		<label id="labelInputFile" for="inputFile">Escoger imagen:
+			<input id="inputFile" autocomplete="off" name="inputFile" required type="file" />
+		</label>
+		<button id="inputSubmit" type="submit">Subir</button>
+		</form>
+	</div>
+	
+	<div id="divMensaje">
+		Debe subir una foto válida
+	</div>
+	<hr>
+	<div id="divQueryTxt">
+		Foto de consulta:
+	</div>
+	<div id="divQueryImg">
+		<img alt="Uploaded image" class="foto-query" src="consulta/ad2cg1.jpg">
+	</div>
+
+	<hr>
+	<div id="divNNTxt">
+		Los 3 productos más parecidos:
+	</div>
+	<div id="divNNImg">
+		<img alt="Producto 1" class="foto-nn" src="catalogo/jv8st2.jpg">
+		<img alt="Producto 2" class="foto-nn" src="catalogo/om6rw4.jpg">
+		<img alt="Producto 3" class="foto-nn" src="catalogo/wf2zl7.jpg">
+	</div>
+</body>
+</html>

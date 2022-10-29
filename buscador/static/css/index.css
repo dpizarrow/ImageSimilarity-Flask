@@ -1,0 +1,51 @@
+body {
+    background-color: white;
+    padding: 10px;
+	font-family: Verdana, Helvetica, sans-serif;
+}
+#divForm1 {
+	height: 60px;
+	width: 100%;
+	text-align: center;
+}
+#labelInputFile {
+	cursor: pointer;
+	font-weight: bold;
+	background-color: #eeeeee;
+}
+#inputFile {
+	width: 300px;
+}
+#inputSubmit {
+	width: 100px;
+}
+#divMensaje {
+	text-align: center;
+	color: red;
+}
+#divQueryTxt {
+	text-align: center;
+	font-weight: bold;
+}
+#divQueryImg {
+	text-align: center;
+}
+#divNNTxt {
+	text-align: center;
+	font-weight: bold;
+}
+#divNNImg {
+	text-align: center;
+}
+.foto-query {
+	height: 200px;
+	width: auto;
+	border: 1px solid black;
+	margin: 10px;
+}
+.foto-nn {
+	height: 200px;
+	width: auto;
+	border: 1px solid black;
+	margin: 10px;
+}
