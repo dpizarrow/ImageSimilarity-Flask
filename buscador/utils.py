@@ -20,6 +20,7 @@ def get_closest_matches(features):
         arr = torch.from_numpy(arr)
         d = torch.cdist(features, arr, p=2)
         results[fname] = d
+    print(results)
     results = dict(sorted(results.items(), key=lambda x:x[1]))
     top_3 = []
     for k in results:
