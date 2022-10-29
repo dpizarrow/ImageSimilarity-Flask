@@ -31,5 +31,6 @@ def get_closest_matches(features):
     top_3 = []
     for k in results:
         top_3.append(k)
+    print(top_3)
     return top_3[0]
  
