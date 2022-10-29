@@ -15,7 +15,7 @@ def get_closest_matches(features):
     for f in os.listdir(featurepath):
         fname = f.split('.')[0]
         fname += '.jpg'
-        arr = np.load(f)
+        arr = np.load(os.path.join(featurepath, f))
         print(type(arr))
  
 
