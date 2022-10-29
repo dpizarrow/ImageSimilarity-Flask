@@ -21,7 +21,7 @@ def get_closest_matches(features):
         d = torch.cdist(features, arr, p=2)
         print(d.size())
         results[fname] = d
-    print(results)
+    # print(results)
     # results = dict(sorted(results.items(), key=lambda x:x[1]))
     top_3 = []
     for k in results:
