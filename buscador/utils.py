@@ -22,7 +22,7 @@ def get_closest_matches(features):
         print(d.size())
         results[fname] = d
     print(results)
-    results = dict(sorted(results.items(), key=lambda x:x[1]))
+    # results = dict(sorted(results.items(), key=lambda x:x[1]))
     top_3 = []
     for k in results:
         top_3.append(k)
