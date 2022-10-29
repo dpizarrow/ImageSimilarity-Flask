@@ -22,6 +22,8 @@ def predict():
         buff = io.BytesIO()
         torch.save(deep_features, buff)
         buff.seek(0)
+        buff = buff.read()
+        buff = buff.decode('UTF-8')
         return buff  # return buff.read()
 
 
