@@ -51,7 +51,7 @@ def display_image(filename):
 
 @app.route('/results/<filename>')
 def display_results(filename):
-    return redirect(url_for('/media/disco-compartido/mc4/catalogo', filename=filename), code=301)
+    return redirect(url_for('static', filename='catalogo/' + filename), code=301)
 
 
 if __name__ == "__main__":
