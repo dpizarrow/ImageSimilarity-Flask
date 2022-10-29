@@ -1,5 +1,6 @@
 import os
 from collections import defaultdict
+import numpy as np
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -9,13 +10,13 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_closest_matches(features):
-    results = {}
+    results = defaultdict()
     i = 0
     for f in os.listdir(featurepath):
-        i+= 1
-        fname = f.split('.')[0].join('jpg')
-        print(fname)
-        if i == 3:
-            break
+        fname = f.split('.')[0]
+        fname += '.jpg'
+        arr = np.load(f)
+        print(type(arr))
+ 
 
 get_closest_matches("hola")
