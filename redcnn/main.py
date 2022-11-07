@@ -5,7 +5,7 @@ import io
 import torch
 
 
-@app.route('/redcnn', methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     if request.method == 'POST':
         file = request.files['file']
