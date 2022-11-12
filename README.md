@@ -2,6 +2,8 @@
 
 Flask web application that takes an image, and displays the three most similar images to the one uploaded 
 
+![Example Image](example.png)
+
 ## Project structure 
 
 The project is composed of two main folders:
